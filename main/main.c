@@ -54,13 +54,10 @@ void app_main(void)
     ESP_ERROR_CHECK( esp_wifi_set_config(WIFI_IF_STA, &sta_config) );
     ESP_ERROR_CHECK( esp_wifi_start() );
     ESP_ERROR_CHECK( esp_wifi_connect() );
-
-    gpio_set_direction(GPIO_NUM_4, GPIO_MODE_OUTPUT);
  
     xTaskCreatePinnedToCore(&tsk_httpd, "httpd", 2048, NULL, 5, NULL, tskNO_AFFINITY);
     xTaskCreatePinnedToCore(&tsk_uart0, "UART0", 2048, NULL, 5, NULL, tskNO_AFFINITY);
     
-    while (true) {
-    }
+    vTaskDelete(NULL);
 }
 
