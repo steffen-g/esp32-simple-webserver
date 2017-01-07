@@ -2,13 +2,16 @@
 
 esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h must be changed from
 
+```
 #define configUSE_TRACE_FACILITY		0		/* Used by vTaskList in main.c */
 #define configUSE_STATS_FORMATTING_FUNCTIONS	0	/* Used by vTaskList in main.c */
+```
 
 to 
-
+```
 #define configUSE_TRACE_FACILITY		1		/* Used by vTaskList in main.c */
 #define configUSE_STATS_FORMATTING_FUNCTIONS	1	/* Used by vTaskList in main.c */
+```
 
 to have vTaskList() in freertos.
 
