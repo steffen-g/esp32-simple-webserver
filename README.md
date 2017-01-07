@@ -17,4 +17,6 @@ to have vTaskList() in freertos.
 
 The latest version of the wifi driver is not working properly with this example. 
 So go back a few commits:
+```
 esp-idf/components/esp32/lib$ git checkout 02232f974b0ff1568ddd6d7015a41fb4f4870994
+```
